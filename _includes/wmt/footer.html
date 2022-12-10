@@ -1,0 +1,33 @@
+    <div class="stickyFooter">
+
+      <div class="copyright">
+        <div class="container">
+          {% if site.custom-footer == true %}
+            {% include custom-footer.html %}
+          {% endif %}
+          <div class="row margin-bottom-30">
+            <div class="col-md-8">
+              <p class="copyright-space">
+                2011 - {{ 'now' | date: "%Y" }} &copy;
+                Walmart Inc. All Rights Reserved.
+              </p>
+              {% if site.contribute == false %}
+              <p></p>
+              {% else %}
+              <p>
+                <a href="{{site.source_url}}" target="_blank">Contribute to the site</a>.
+              </p>
+              {% endif %}
+            </div>
+            <div class="col-md-4">
+              {% if site.footer-image.size > 0 %}
+                {% assign local-footer-image = site.footer-image %}
+              {% else  %}
+                {% assign local-footer-image = "/assets/wmt/img/logos/walmart-labs-wht.png" %}
+              {% endif %}
+              <img src="{{local-footer-image}}" alt="site footer image" class="img-responsive" width="150px" align="right" style="padding-top:10px;"/>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
